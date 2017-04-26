@@ -1,0 +1,17 @@
+## Velocity Movie Database
+<html>
+    <body>
+		<table>
+		#foreach( $movie in $movieDB.getMovies() )
+			<tr><td>$move.getTitle()</td><td>$move.getOriginalTitle()</td></tr>
+			<tr><td>$move.getCastmember()</td><td>$move.getActor()</td><td>$move.getLeadActor()</td></tr>
+			<table>
+				#foreach( $actor in $movie.getLeadActors() )
+					<tr><td>$actor</td></tr>
+				#end
+			</table>
+			<tr><td>$move.isInternational()</td><td>$move.getDuration()</td><td>$move.getRelease()</td></tr>
+		#end
+		</table>
+    </body>
+</html>
