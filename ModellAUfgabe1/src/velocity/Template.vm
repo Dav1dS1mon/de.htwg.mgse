@@ -13,6 +13,7 @@ are no movies.</p>
 #end
 <html>
 <title>Movie DB</title>
+<link rel="stylesheet" href="style.css">
     <body>
     <h1>Movie Database by Sascha Drobig and David Simon</h1>
     <p class="headLine">There #printHeadLine($movieDB.getMovies().size())

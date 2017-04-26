@@ -1,0 +1,10 @@
+body {
+	font-family: sans-serif;
+}
+
+.movieTable, .actorTable {
+	text-align: left;	
+}
+.actorTable{
+	margin-left: 15px;
+}
