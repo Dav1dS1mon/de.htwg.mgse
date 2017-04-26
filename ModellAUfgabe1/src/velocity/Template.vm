@@ -1,0 +1,20 @@
+## Velocity Movie Database
+<html>
+<title>Movie DB </title>
+    <body>
+    <h1>Movie Database by David Simon and Sascha Drobig</h1>
+		<table>
+		#foreach( $movie in $movieDB.getMovies() )
+			<tr><td>$movie.getTitle()</td>#if($movie.getOriginalTitle())<td>$!movie.getOriginalTitle()</td>#end<td>Release: $movie.getRelease()</td></tr>
+			<tr><td> Number of Castmembers $movie.getCastmember()</td> <td> Actors $movie.getActor()</td><td> Lead Actors $movie.getLeadActor()</td></tr>
+			<table>
+			<tr>Name of the LeadActors</tr>
+				#foreach( $actor in $movie.getLeadActors() )
+					<tr><td>$actor</td></tr>
+				#end
+			</table>
+			<tr><td> International Movie:#if($movie.isInternational())yes #else no #end </td><td> Duration: $movie.getDuration()</td></tr>
+		#end
+		</table>
+    </body>
+</html>

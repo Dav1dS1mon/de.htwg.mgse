@@ -30,7 +30,7 @@ public class Movie {
 	@XmlAttribute(name = "duration")
 	private String duration;
 	
-	@XmlAttribute(name = "realse")
+	@XmlAttribute(name = "release")
 	private String release;
 	
 	@XmlElementWrapper(name="cast")

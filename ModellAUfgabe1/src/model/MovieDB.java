@@ -40,11 +40,11 @@ public class MovieDB {
 		
 		private String title;
 		
-		private String originalTItle;
+		private String originalTitle;
 		
 		private boolean international;
 		
-		private int castmember;
+		private int castmember = 0;
 		
 		private int actor = 0;
 		
@@ -61,7 +61,7 @@ public class MovieDB {
 			this.release = movie.getRelease();
 			if(movie.getOriginaltitle() != null){
 				if(!movie.getOriginaltitle().equals(this.title)){
-					this.originalTItle = movie.getOriginaltitle();
+					this.originalTitle = movie.getOriginaltitle();
 					international = true;
 				}else{
 					international = false;
@@ -83,7 +83,7 @@ public class MovieDB {
 			}
 			String movieMin = movie.getDuration().split("m")[0].trim();
 			double min = Double.parseDouble(movieMin);
-			this.duration = String.valueOf(min/2);
+			this.duration = String.valueOf(min/60);
 			
 		}
 
@@ -96,12 +96,12 @@ public class MovieDB {
 			this.title = title;
 		}
 
-		public String getOriginalTItle() {
-			return originalTItle;
+		public String getOriginalTitle() {
+			return originalTitle;
 		}
 
 		public void setOriginalTItle(String originalTItle) {
-			this.originalTItle = originalTItle;
+			this.originalTitle = originalTItle;
 		}
 
 		public boolean isInternational() {
@@ -160,5 +160,8 @@ public class MovieDB {
 			this.duration = duration;
 		}
 		
+		public String toString(){
+			return this.getTitle();
+		}
 	}
 }

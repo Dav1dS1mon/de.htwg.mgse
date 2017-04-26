@@ -8,32 +8,30 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import org.apache.velocity.io.VelocityWriter;
+
 import model.Movie;
 import model.MovieDB;
 import model.MovieDB.JSONMOVie;
+import velocity.DBWriter;
 
 public class Control {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		
-		if(args.length>0){
-			Path path = Paths.get(args[0]);
+			Path path = Paths.get(args[0]+"/einfachesBeispiel.movie");
 		    MovieDB db  = new MovieDB();
-			Files.walk(path).forEach(filePath ->{
-				if(filePath.endsWith(".movie")){
-					try {
-						addMovie(db, filePath);
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
-			});
-			//not needed anymore s
-		    db.saveDB(path.toAbsolutePath().toString()+"/movieDB.json");
-		    
-		}else{
-			System.err.println("no path");
-		}
+		    addMovie(db, path);
+//			Files.walk(path).forEach(filePath ->{
+//				if(filePath.endsWith(".movie")){
+//					try {
+//						addMovie(db, filePath);
+//					} catch (Exception e) {
+//						e.printStackTrace();
+//					}
+//				}
+//			});
+			DBWriter.writte(db);
 	}
 	
 	private static void addMovie(MovieDB db, Path path) throws IOException, FileNotFoundException {
