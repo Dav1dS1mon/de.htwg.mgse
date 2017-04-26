@@ -1,6 +1,9 @@
 package velocity;
 
+import java.io.IOException;
 import java.io.StringWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
@@ -12,7 +15,7 @@ import model.MovieDB;
 
 public class DBWriter {
 	
-	public static void writte(MovieDB db){
+	public static void writte(MovieDB db, String path){
 		VelocityEngine engine = new VelocityEngine();
 		engine.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
 		engine.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
@@ -22,7 +25,11 @@ public class DBWriter {
 		context.put("movieDB", db);
 		StringWriter writer = new StringWriter();
 		template.merge(context, writer);
-		System.out.println(writer);
+		try {
+			Files.write(Paths.get(path), writer.toString().getBytes());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
