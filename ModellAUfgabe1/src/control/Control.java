@@ -28,7 +28,7 @@ public class Control {
 					}
 				}
 			});
-			//not needed anymore
+			//not needed anymore s
 		    db.saveDB(path.toAbsolutePath().toString()+"/movieDB.json");
 		    
 		}else{
