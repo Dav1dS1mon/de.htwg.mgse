@@ -47,6 +47,52 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AFIeld" abstract="true" eSuperTypes="#//modell/IField"/>
   </eSubpackages>
+  <eSubpackages name="controller">
+    <eClassifiers xsi:type="ecore:EClass" name="IController" eSuperTypes="#//util/observer/IObservable">
+      <eOperations name="isAsetForController">
+        <eParameters name="cardOne" eType="#//modell/ICard"/>
+        <eParameters name="cardTwo" eType="#//modell/ICard"/>
+        <eParameters name="cardThree" eType="#//modell/ICard"/>
+      </eOperations>
+      <eOperations name="getCardinGame">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="#//modell/ICard"/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getField" eType="#//impl/Field"/>
+      <eOperations name="areSetInField" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eOperations name="getAsetInGame">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="#//modell/ICard"/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="stillSetInGAme" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eOperations name="getSetInField">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="#//modell/ICard"/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="geTplayerOnePoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eOperations name="geTplayerTwoPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eOperations name="getPlayerOne" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eOperations name="getPlayerTwo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eOperations name="newGame"/>
+      <eOperations name="setFieldSize">
+        <eParameters name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="getCardInFieldGame">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="#//modell/ICard"/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getCardsAndTheIndexOfCardInField">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eTypeArguments eClassifier="#//modell/ICard"/>
+        </eGenericType>
+      </eOperations>
+    </eClassifiers>
+  </eSubpackages>
   <eSubpackages name="impl" nsPrefix="model">
     <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="#//modell/AFIeld">
       <eOperations name="startUp"/>
@@ -159,5 +205,104 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="panelFilling" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="anz" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Pack" eSuperTypes="#//modell/ICard">
+      <eOperations name="Pack"/>
+      <eOperations name="createCards">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="#//impl/Card"/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="setFormedIndex"/>
+      <eOperations name="setFillIndex"/>
+      <eOperations name="setComponentsOfIndex"/>
+      <eOperations name="setColorIndex"/>
+      <eOperations name="getPack">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="#//modell/ICard"/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getcolors">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getFormes">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getFill">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eGenericType>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="FORME">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="COLORS">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="FILL">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="NUMBEROFCOMPONET">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="SIZEOFARRAY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="NUMBEROFEACHCARD" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="colorIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="formeIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="fillgingIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="numbersIdex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="util">
+    <eSubpackages name="observer">
+      <eClassifiers xsi:type="ecore:EClass" name="Event"/>
+      <eClassifiers xsi:type="ecore:EClass" name="IObservable">
+        <eOperations name="addObserver">
+          <eParameters name="s" eType="#//util/observer/IObservable"/>
+        </eOperations>
+        <eOperations name="removeObserver">
+          <eParameters name="s" eType="#//util/observer/IObservable"/>
+        </eOperations>
+        <eOperations name="removeAllObservers"/>
+        <eOperations name="notifyObservers"/>
+        <eOperations name="notifyObservers">
+          <eParameters name="e" eType="#//util/observer/Event"/>
+        </eOperations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="IObserver">
+        <eOperations name="update">
+          <eParameters name="e" eType="#//util/observer/Event"/>
+        </eOperations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Observable" eSuperTypes="#//util/observer/IObservable">
+        <eOperations name="addObserver">
+          <eParameters name="s" eType="#//util/observer/IObservable"/>
+        </eOperations>
+        <eOperations name="removeObserver">
+          <eParameters name="s" eType="#//util/observer/IObservable"/>
+        </eOperations>
+        <eOperations name="removeAllObservers"/>
+        <eOperations name="notifyObservers"/>
+        <eOperations name="notifyObservers">
+          <eParameters name="e" eType="#//util/observer/Event"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="subscribers">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+            <eTypeArguments eClassifier="#//util/observer/IObserver"/>
+          </eGenericType>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </eSubpackages>
   </eSubpackages>
 </ecore:EPackage>
