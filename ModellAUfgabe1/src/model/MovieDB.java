@@ -67,7 +67,7 @@ public class MovieDB {
 					international = false;
 				}
 			}else{
-				international = true;
+				international = false;
 			}
 			
 			List<Member> cast = movie.getCast();
@@ -82,8 +82,8 @@ public class MovieDB {
 				}
 			}
 			String movieMin = movie.getDuration().split("m")[0].trim();
-			double min = Double.parseDouble(movieMin);
-			this.duration = String.valueOf(min/60);
+			Integer integer = Integer.parseInt(movieMin);
+			this.duration = String.format("%s:%s", integer/60, integer%60);
 			
 		}
 

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="set" nsURI="" nsPrefix="htwg.mgse">
+  <eSubpackages name="modell">
+    <eClassifiers xsi:type="ecore:EClass" name="ICard" abstract="true" interface="true">
+      <eOperations name="getColor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="getForm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="getPanelFilling" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="getNumberOfComponents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ACard" abstract="true" eSuperTypes="#//modell/ICard"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IField" abstract="true" interface="true">
+      <eOperations name="startUp"/>
+      <eOperations name="getCardsInField">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="foundSet">
+        <eParameters name="cardOne" eType="#//modell/ICard"/>
+        <eParameters name="cardTwo" eType="#//modell/ICard"/>
+        <eParameters name="cardThree" eType="#//modell/ICard"/>
+      </eOperations>
+      <eOperations name="changeCards">
+        <eParameters name="list">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+            <eTypeArguments/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getUnusedCards">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getSizeofField" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eOperations name="getAllCardsInGame">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getCardInFieldGame" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMap"/>
+      <eOperations name="clear"/>
+      <eOperations name="setSizeOfField">
+        <eParameters name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AFIeld" abstract="true" eSuperTypes="#//modell/IField"/>
+  </eSubpackages>
+  <eSubpackages name="impl" nsPrefix="model">
+    <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="#//modell/AFIeld">
+      <eOperations name="packForGame">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments/>
+          <eTypeArguments/>
+        </eGenericType>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sizeOfField" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="INITIALVALUEOFFIELD"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" changeable="false"
+          defaultValueLiteral="12"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="MAX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          changeable="false" defaultValueLiteral="81"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="ONE" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="NUMBERFORONELINE" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="LEGHTFORSTRING" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="listeofcontains">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="ramdomListe">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments/>
+          <eTypeArguments/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardInFieldGame">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments/>
+          <eTypeArguments/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="packForGame">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments/>
+        </eGenericType>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Card" eSuperTypes="#//modell/ACard">
+      <eOperations name="compareTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="card" eType="#//modell/ACard"/>
+      </eOperations>
+      <eOperations name="new" eType="#//impl/Card">
+        <eParameters name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="form" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="panelFilling" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="anz" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="form" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="panelFilling" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="anz" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
