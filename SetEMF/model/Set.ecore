@@ -49,12 +49,66 @@
   </eSubpackages>
   <eSubpackages name="impl" nsPrefix="model">
     <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="#//modell/AFIeld">
-      <eOperations name="packForGame">
+      <eOperations name="startUp"/>
+      <eOperations name="rand">
         <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-          <eTypeArguments/>
-          <eTypeArguments/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eGenericType>
       </eOperations>
+      <eOperations name="foundSet">
+        <eParameters name="cardOne" eType="#//modell/ICard"/>
+        <eParameters name="cardTwo" eType="#//modell/ICard"/>
+        <eParameters name="cardThree" eType="#//modell/ICard"/>
+      </eOperations>
+      <eOperations name="fillField"/>
+      <eOperations name="getCardsInField">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="#//modell/ICard"/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="setSizeOfField">
+        <eParameters name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="changeCards">
+        <eParameters name="liste">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+            <eTypeArguments eClassifier="#//modell/ICard"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getUnusedCards">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="#//modell/ICard"/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getSizeofField" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eOperations name="getAllCardsInGame">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments eClassifier="#//modell/ICard"/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getRandomListe">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getCardInFieldGame">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eTypeArguments eClassifier="#//modell/ICard"/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="clear"/>
+      <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="returnApeend" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="returnString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="apendKeyInString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="appendColorInString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="appendFormInString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="appendNumberOfComponents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="appendFillingInString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="sizeOfField" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="INITIALVALUEOFFIELD"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" changeable="false"
@@ -69,24 +123,24 @@
           changeable="false"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="listeofcontains">
         <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
-          <eTypeArguments/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eGenericType>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="ramdomListe">
         <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-          <eTypeArguments/>
-          <eTypeArguments/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eGenericType>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardInFieldGame">
         <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-          <eTypeArguments/>
-          <eTypeArguments/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eTypeArguments eClassifier="#//modell/ICard"/>
         </eGenericType>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="packForGame">
         <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
-          <eTypeArguments/>
+          <eTypeArguments eClassifier="#//modell/ICard"/>
         </eGenericType>
       </eStructuralFeatures>
     </eClassifiers>
