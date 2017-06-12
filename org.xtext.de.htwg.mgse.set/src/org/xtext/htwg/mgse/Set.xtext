@@ -10,7 +10,7 @@ AbstractElement:
 ;
 
 PackageDeclaration:
-	'package' name=QualifiedNameWithWildcard
+	'package' name=QualifiedName
 ;
 
 Import:
@@ -29,7 +29,7 @@ enum Visibility:
 ;
 
 Feature:
-	Property | Operation
+	Property | Operation 
 ;
 
 Property:

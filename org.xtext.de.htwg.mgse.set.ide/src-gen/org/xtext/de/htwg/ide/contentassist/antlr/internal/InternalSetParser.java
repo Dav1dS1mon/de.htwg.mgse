@@ -52196,28 +52196,28 @@ public class InternalSetParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDeclaration__NameAssignment_1"
-    // InternalSet.g:15828:1: rule__PackageDeclaration__NameAssignment_1 : ( ruleQualifiedNameWithWildcard ) ;
+    // InternalSet.g:15828:1: rule__PackageDeclaration__NameAssignment_1 : ( ruleQualifiedName ) ;
     public final void rule__PackageDeclaration__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSet.g:15832:1: ( ( ruleQualifiedNameWithWildcard ) )
-            // InternalSet.g:15833:2: ( ruleQualifiedNameWithWildcard )
+            // InternalSet.g:15832:1: ( ( ruleQualifiedName ) )
+            // InternalSet.g:15833:2: ( ruleQualifiedName )
             {
-            // InternalSet.g:15833:2: ( ruleQualifiedNameWithWildcard )
-            // InternalSet.g:15834:3: ruleQualifiedNameWithWildcard
+            // InternalSet.g:15833:2: ( ruleQualifiedName )
+            // InternalSet.g:15834:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameWithWildcardParserRuleCall_1_0()); 
+               before(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0()); 
             }
             pushFollow(FOLLOW_2);
-            ruleQualifiedNameWithWildcard();
+            ruleQualifiedName();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameWithWildcardParserRuleCall_1_0()); 
+               after(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0()); 
             }
 
             }

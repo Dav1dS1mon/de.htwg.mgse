@@ -1,0 +1,13 @@
+package de.htwg.se.setgame.modell.impl
+
+import de.htwg.se.setgame.modell.*
+
+public class Card {
+	color:String
+	form:String
+	panelFilling:String
+	anz:int
+	
+	public op Card()
+	
+}

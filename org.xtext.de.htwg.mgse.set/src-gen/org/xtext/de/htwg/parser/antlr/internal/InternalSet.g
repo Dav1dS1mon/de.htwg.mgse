@@ -165,9 +165,9 @@ rulePackageDeclaration returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameWithWildcardParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0());
 				}
-				lv_name_1_0=ruleQualifiedNameWithWildcard
+				lv_name_1_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPackageDeclarationRule());
@@ -176,7 +176,7 @@ rulePackageDeclaration returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.eclipse.xtext.xbase.Xtype.QualifiedNameWithWildcard");
+						"org.eclipse.xtext.xbase.Xbase.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
 			)

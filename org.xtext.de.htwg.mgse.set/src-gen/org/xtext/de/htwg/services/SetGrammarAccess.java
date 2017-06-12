@@ -70,23 +70,23 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPackageKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameQualifiedNameWithWildcardParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//PackageDeclaration:
-		//	'package' name=QualifiedNameWithWildcard;
+		//	'package' name=QualifiedName;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'package' name=QualifiedNameWithWildcard
+		//'package' name=QualifiedName
 		public Group getGroup() { return cGroup; }
 		
 		//'package'
 		public Keyword getPackageKeyword_0() { return cPackageKeyword_0; }
 		
-		//name=QualifiedNameWithWildcard
+		//name=QualifiedName
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//QualifiedNameWithWildcard
-		public RuleCall getNameQualifiedNameWithWildcardParserRuleCall_1_0() { return cNameQualifiedNameWithWildcardParserRuleCall_1_0; }
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
 	}
 	public class ImportElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.de.htwg.Set.Import");
@@ -470,7 +470,7 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//PackageDeclaration:
-	//	'package' name=QualifiedNameWithWildcard;
+	//	'package' name=QualifiedName;
 	public PackageDeclarationElements getPackageDeclarationAccess() {
 		return pPackageDeclaration;
 	}

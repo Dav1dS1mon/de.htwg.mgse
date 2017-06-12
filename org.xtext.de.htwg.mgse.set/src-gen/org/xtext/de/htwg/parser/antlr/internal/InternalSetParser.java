@@ -505,7 +505,7 @@ public class InternalSetParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePackageDeclaration"
-    // InternalSet.g:153:1: rulePackageDeclaration returns [EObject current=null] : (otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedNameWithWildcard ) ) ) ;
+    // InternalSet.g:153:1: rulePackageDeclaration returns [EObject current=null] : (otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedName ) ) ) ;
     public final EObject rulePackageDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -517,11 +517,11 @@ public class InternalSetParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSet.g:159:2: ( (otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedNameWithWildcard ) ) ) )
-            // InternalSet.g:160:2: (otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedNameWithWildcard ) ) )
+            // InternalSet.g:159:2: ( (otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedName ) ) ) )
+            // InternalSet.g:160:2: (otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedName ) ) )
             {
-            // InternalSet.g:160:2: (otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedNameWithWildcard ) ) )
-            // InternalSet.g:161:3: otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedNameWithWildcard ) )
+            // InternalSet.g:160:2: (otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedName ) ) )
+            // InternalSet.g:161:3: otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedName ) )
             {
             otherlv_0=(Token)match(input,13,FOLLOW_4); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -529,19 +529,19 @@ public class InternalSetParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_0, grammarAccess.getPackageDeclarationAccess().getPackageKeyword_0());
               		
             }
-            // InternalSet.g:165:3: ( (lv_name_1_0= ruleQualifiedNameWithWildcard ) )
-            // InternalSet.g:166:4: (lv_name_1_0= ruleQualifiedNameWithWildcard )
+            // InternalSet.g:165:3: ( (lv_name_1_0= ruleQualifiedName ) )
+            // InternalSet.g:166:4: (lv_name_1_0= ruleQualifiedName )
             {
-            // InternalSet.g:166:4: (lv_name_1_0= ruleQualifiedNameWithWildcard )
-            // InternalSet.g:167:5: lv_name_1_0= ruleQualifiedNameWithWildcard
+            // InternalSet.g:166:4: (lv_name_1_0= ruleQualifiedName )
+            // InternalSet.g:167:5: lv_name_1_0= ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
-              					newCompositeNode(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameWithWildcardParserRuleCall_1_0());
+              					newCompositeNode(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0());
               				
             }
             pushFollow(FOLLOW_2);
-            lv_name_1_0=ruleQualifiedNameWithWildcard();
+            lv_name_1_0=ruleQualifiedName();
 
             state._fsp--;
             if (state.failed) return current;
@@ -554,7 +554,7 @@ public class InternalSetParser extends AbstractInternalAntlrParser {
               						current,
               						"name",
               						lv_name_1_0,
-              						"org.eclipse.xtext.xbase.Xtype.QualifiedNameWithWildcard");
+              						"org.eclipse.xtext.xbase.Xbase.QualifiedName");
               					afterParserOrEnumRuleCall();
               				
             }

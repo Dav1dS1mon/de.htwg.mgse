@@ -407,7 +407,7 @@ public class SetSemanticSequencer extends XbaseSemanticSequencer {
 	 *     PackageDeclaration returns PackageDeclaration
 	 *
 	 * Constraint:
-	 *     name=QualifiedNameWithWildcard
+	 *     name=QualifiedName
 	 */
 	protected void sequence_PackageDeclaration(ISerializationContext context, PackageDeclaration semanticObject) {
 		if (errorAcceptor != null) {
@@ -415,7 +415,7 @@ public class SetSemanticSequencer extends XbaseSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SetPackage.Literals.PACKAGE_DECLARATION__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameWithWildcardParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

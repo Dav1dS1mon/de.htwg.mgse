@@ -15831,9 +15831,9 @@ rule__PackageDeclaration__NameAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameWithWildcardParserRuleCall_1_0()); }
-		ruleQualifiedNameWithWildcard
-		{ after(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameWithWildcardParserRuleCall_1_0()); }
+		{ before(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0()); }
+		ruleQualifiedName
+		{ after(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0()); }
 	)
 ;
 finally {
