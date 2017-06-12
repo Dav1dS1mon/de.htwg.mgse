@@ -1,0 +1,57 @@
+grammar org.xtext.de.htwg.Set with org.eclipse.xtext.xbase.Xbase
+generate set "http://www.xtext.org/de/htwg/Set"
+
+Domainmodel:
+	(elements+=AbstractElement)*;
+
+AbstractElement:
+	PackageDeclaration | Entity | Import
+;
+
+PackageDeclaration:
+	'package' name=QualifiedNameWithWildcard
+;
+
+Import:
+	'import' importedNamespace=QualifiedNameWithWildcard
+;
+
+@Override 
+QualifiedNameWithWildcard:
+	QualifiedName '.*'?
+;
+
+@Override 
+QualifiedName:
+	ID('.' ID)*
+;
+
+Entity:
+	visibility=Visibility? 'class' name=ID ('extends' superType=[Entity | QualifiedName] | 'implements' superType=[Entity | QualifiedName])?
+	'{'
+	(features+=Feature)*
+	'}'
+;
+
+enum Visibility:
+	public | private | protected
+;
+
+Feature:
+	Property | Operation
+;
+
+Property:
+	name=ValidID ':' type=JvmTypeReference
+;
+
+Operation:
+	visibility=Visibility? 'op' name=ValidID '(' 
+	(params+=JvmFormalParameter (',' params+=JvmFormalParameter)*)?
+	')' ':' type=JvmTypeReference
+	body=XBlockExpression
+;
+
+
+
+
