@@ -362,7 +362,7 @@ public class SetSemanticSequencer extends XbaseSemanticSequencer {
 	 *     Entity returns Entity
 	 *
 	 * Constraint:
-	 *     (visibility=Visibility? name=ValidID (superType=[Entity|QualifiedName] | superType=[Entity|QualifiedName])? features+=Feature*)
+	 *     (visibility=Visibility? name=ValidID (superType=QualifiedName | superType=QualifiedName)? features+=Feature*)
 	 */
 	protected void sequence_Entity(ISerializationContext context, Entity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -10,15 +10,15 @@ AbstractElement:
 ;
 
 PackageDeclaration:
-	'package' name=QualifiedName
+	'package' name=QualifiedName ';'
 ;
 
 Import:
-	'import' importedNamespace=QualifiedNameWithWildcard
+	'import' importedNamespace=QualifiedNameWithWildcard ';'
 ;
 
 Entity:
-	visibility=Visibility? 'class' name=ValidID ('extends' superType=[Entity | QualifiedName] | 'implements' superType=[Entity | QualifiedName])?
+	visibility=Visibility? 'class' name=ValidID ('extends' superType=QualifiedName | 'implements' superType=QualifiedName)?
 	'{'
 	(features+=Feature)*
 	'}'

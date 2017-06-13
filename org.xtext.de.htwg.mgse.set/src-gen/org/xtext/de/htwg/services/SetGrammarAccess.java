@@ -8,7 +8,6 @@ import com.google.inject.Singleton;
 import java.util.List;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.EnumLiteralDeclaration;
 import org.eclipse.xtext.EnumRule;
 import org.eclipse.xtext.Grammar;
@@ -71,12 +70,13 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPackageKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//PackageDeclaration:
-		//	'package' name=QualifiedName;
+		//	'package' name=QualifiedName ';';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'package' name=QualifiedName
+		//'package' name=QualifiedName ';'
 		public Group getGroup() { return cGroup; }
 		
 		//'package'
@@ -87,6 +87,9 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//QualifiedName
 		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
 	public class ImportElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.de.htwg.Set.Import");
@@ -94,12 +97,13 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//Import:
-		//	'import' importedNamespace=QualifiedNameWithWildcard;
+		//	'import' importedNamespace=QualifiedNameWithWildcard ';';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'import' importedNamespace=QualifiedNameWithWildcard
+		//'import' importedNamespace=QualifiedNameWithWildcard ';'
 		public Group getGroup() { return cGroup; }
 		
 		//'import'
@@ -110,6 +114,9 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//QualifiedNameWithWildcard
 		public RuleCall getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0() { return cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
 	public class EntityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.de.htwg.Set.Entity");
@@ -123,28 +130,26 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
 		private final Keyword cExtendsKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
 		private final Assignment cSuperTypeAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final CrossReference cSuperTypeEntityCrossReference_3_0_1_0 = (CrossReference)cSuperTypeAssignment_3_0_1.eContents().get(0);
-		private final RuleCall cSuperTypeEntityQualifiedNameParserRuleCall_3_0_1_0_1 = (RuleCall)cSuperTypeEntityCrossReference_3_0_1_0.eContents().get(1);
+		private final RuleCall cSuperTypeQualifiedNameParserRuleCall_3_0_1_0 = (RuleCall)cSuperTypeAssignment_3_0_1.eContents().get(0);
 		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
 		private final Keyword cImplementsKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
 		private final Assignment cSuperTypeAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final CrossReference cSuperTypeEntityCrossReference_3_1_1_0 = (CrossReference)cSuperTypeAssignment_3_1_1.eContents().get(0);
-		private final RuleCall cSuperTypeEntityQualifiedNameParserRuleCall_3_1_1_0_1 = (RuleCall)cSuperTypeEntityCrossReference_3_1_1_0.eContents().get(1);
+		private final RuleCall cSuperTypeQualifiedNameParserRuleCall_3_1_1_0 = (RuleCall)cSuperTypeAssignment_3_1_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cFeaturesAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cFeaturesFeatureParserRuleCall_5_0 = (RuleCall)cFeaturesAssignment_5.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Entity:
-		//	visibility=Visibility? 'class' name=ValidID ('extends' superType=[Entity|QualifiedName] | 'implements'
-		//	superType=[Entity|QualifiedName])?
+		//	visibility=Visibility? 'class' name=ValidID ('extends' superType=QualifiedName | 'implements'
+		//	superType=QualifiedName)?
 		//	'{'
 		//	features+=Feature*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//visibility=Visibility? 'class' name=ValidID ('extends' superType=[Entity|QualifiedName] | 'implements'
-		//superType=[Entity|QualifiedName])? '{' features+=Feature* '}'
+		//visibility=Visibility? 'class' name=ValidID ('extends' superType=QualifiedName | 'implements' superType=QualifiedName)?
+		//'{' features+=Feature* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//visibility=Visibility?
@@ -162,38 +167,32 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 		//ValidID
 		public RuleCall getNameValidIDParserRuleCall_2_0() { return cNameValidIDParserRuleCall_2_0; }
 		
-		//('extends' superType=[Entity|QualifiedName] | 'implements' superType=[Entity|QualifiedName])?
+		//('extends' superType=QualifiedName | 'implements' superType=QualifiedName)?
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
-		//'extends' superType=[Entity|QualifiedName]
+		//'extends' superType=QualifiedName
 		public Group getGroup_3_0() { return cGroup_3_0; }
 		
 		//'extends'
 		public Keyword getExtendsKeyword_3_0_0() { return cExtendsKeyword_3_0_0; }
 		
-		//superType=[Entity|QualifiedName]
+		//superType=QualifiedName
 		public Assignment getSuperTypeAssignment_3_0_1() { return cSuperTypeAssignment_3_0_1; }
 		
-		//[Entity|QualifiedName]
-		public CrossReference getSuperTypeEntityCrossReference_3_0_1_0() { return cSuperTypeEntityCrossReference_3_0_1_0; }
-		
 		//QualifiedName
-		public RuleCall getSuperTypeEntityQualifiedNameParserRuleCall_3_0_1_0_1() { return cSuperTypeEntityQualifiedNameParserRuleCall_3_0_1_0_1; }
+		public RuleCall getSuperTypeQualifiedNameParserRuleCall_3_0_1_0() { return cSuperTypeQualifiedNameParserRuleCall_3_0_1_0; }
 		
-		//'implements' superType=[Entity|QualifiedName]
+		//'implements' superType=QualifiedName
 		public Group getGroup_3_1() { return cGroup_3_1; }
 		
 		//'implements'
 		public Keyword getImplementsKeyword_3_1_0() { return cImplementsKeyword_3_1_0; }
 		
-		//superType=[Entity|QualifiedName]
+		//superType=QualifiedName
 		public Assignment getSuperTypeAssignment_3_1_1() { return cSuperTypeAssignment_3_1_1; }
 		
-		//[Entity|QualifiedName]
-		public CrossReference getSuperTypeEntityCrossReference_3_1_1_0() { return cSuperTypeEntityCrossReference_3_1_1_0; }
-		
 		//QualifiedName
-		public RuleCall getSuperTypeEntityQualifiedNameParserRuleCall_3_1_1_0_1() { return cSuperTypeEntityQualifiedNameParserRuleCall_3_1_1_0_1; }
+		public RuleCall getSuperTypeQualifiedNameParserRuleCall_3_1_1_0() { return cSuperTypeQualifiedNameParserRuleCall_3_1_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
@@ -470,7 +469,7 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//PackageDeclaration:
-	//	'package' name=QualifiedName;
+	//	'package' name=QualifiedName ';';
 	public PackageDeclarationElements getPackageDeclarationAccess() {
 		return pPackageDeclaration;
 	}
@@ -480,7 +479,7 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Import:
-	//	'import' importedNamespace=QualifiedNameWithWildcard;
+	//	'import' importedNamespace=QualifiedNameWithWildcard ';';
 	public ImportElements getImportAccess() {
 		return pImport;
 	}
@@ -490,8 +489,8 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Entity:
-	//	visibility=Visibility? 'class' name=ValidID ('extends' superType=[Entity|QualifiedName] | 'implements'
-	//	superType=[Entity|QualifiedName])?
+	//	visibility=Visibility? 'class' name=ValidID ('extends' superType=QualifiedName | 'implements'
+	//	superType=QualifiedName)?
 	//	'{'
 	//	features+=Feature*
 	//	'}';

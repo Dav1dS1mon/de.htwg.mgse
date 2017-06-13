@@ -181,6 +181,10 @@ rulePackageDeclaration returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_2=';'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getPackageDeclarationAccess().getSemicolonKeyword_2());
+		}
 	)
 ;
 
@@ -223,6 +227,10 @@ ruleImport returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_2=';'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getImportAccess().getSemicolonKeyword_2());
+		}
 	)
 ;
 
@@ -293,15 +301,18 @@ ruleEntity returns [EObject current=null]
 				(
 					(
 						{
+							newCompositeNode(grammarAccess.getEntityAccess().getSuperTypeQualifiedNameParserRuleCall_3_0_1_0());
+						}
+						lv_superType_4_0=ruleQualifiedName
+						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getEntityRule());
+								$current = createModelElementForParent(grammarAccess.getEntityRule());
 							}
-						}
-						{
-							newCompositeNode(grammarAccess.getEntityAccess().getSuperTypeEntityCrossReference_3_0_1_0());
-						}
-						ruleQualifiedName
-						{
+							set(
+								$current,
+								"superType",
+								lv_superType_4_0,
+								"org.eclipse.xtext.xbase.Xbase.QualifiedName");
 							afterParserOrEnumRuleCall();
 						}
 					)
@@ -316,15 +327,18 @@ ruleEntity returns [EObject current=null]
 				(
 					(
 						{
+							newCompositeNode(grammarAccess.getEntityAccess().getSuperTypeQualifiedNameParserRuleCall_3_1_1_0());
+						}
+						lv_superType_6_0=ruleQualifiedName
+						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getEntityRule());
+								$current = createModelElementForParent(grammarAccess.getEntityRule());
 							}
-						}
-						{
-							newCompositeNode(grammarAccess.getEntityAccess().getSuperTypeEntityCrossReference_3_1_1_0());
-						}
-						ruleQualifiedName
-						{
+							set(
+								$current,
+								"superType",
+								lv_superType_6_0,
+								"org.eclipse.xtext.xbase.Xbase.QualifiedName");
 							afterParserOrEnumRuleCall();
 						}
 					)

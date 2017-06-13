@@ -82,30 +82,30 @@ public interface Entity extends AbstractElement
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Super Type</b></em>' reference.
+   * Returns the value of the '<em><b>Super Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Super Type</em>' reference isn't clear,
+   * If the meaning of the '<em>Super Type</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Super Type</em>' reference.
-   * @see #setSuperType(Entity)
+   * @return the value of the '<em>Super Type</em>' attribute.
+   * @see #setSuperType(String)
    * @see org.xtext.de.htwg.set.SetPackage#getEntity_SuperType()
    * @model
    * @generated
    */
-  Entity getSuperType();
+  String getSuperType();
 
   /**
-   * Sets the value of the '{@link org.xtext.de.htwg.set.Entity#getSuperType <em>Super Type</em>}' reference.
+   * Sets the value of the '{@link org.xtext.de.htwg.set.Entity#getSuperType <em>Super Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Super Type</em>' reference.
+   * @param value the new value of the '<em>Super Type</em>' attribute.
    * @see #getSuperType()
    * @generated
    */
-  void setSuperType(Entity value);
+  void setSuperType(String value);
 
   /**
    * Returns the value of the '<em><b>Features</b></em>' containment reference list.

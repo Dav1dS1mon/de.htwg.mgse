@@ -1,11 +1,11 @@
-package de.htwg.se.setgame.modell.impl
+package de.htwg.se.setgame.modell.impl;
 
-import java.util.*
-import de.htwg.se.setgame.modell.*
+import java.util.*;
+import de.htwg.se.setgame.modell.*;
 
 public class Pack {
 	
-	pack:ICard[]
+	PACK:ICard[]
 	FORME:String[]
 	COLORS:String[]
 	FILL:String[]
@@ -19,19 +19,7 @@ public class Pack {
 	
 	public op Pack():void {}
 	
-	protected op creatCards():Card[] 
-	{
-		Card list[] = new Card[SIZEOFARRAY];
-		for (int i = 0; i < SIZEOFARRAY; i++) {
-
-			list[i] = new Card(COLORS[colorIndex], FORME[formeIndex],
-					FILL[fillgingIndex], NUMBEROFCOMPONET[numbersIdex]);
-			setFormedIndex();
-
-		}
-
-		return list;
-	}
+	protected op creatCards():Card[] {}
 	
 	private op setFormedIndex():void 
 	{
@@ -75,29 +63,12 @@ public class Pack {
 		this.colorIndex = t;
 	}
 	
-	public op getPack:ICard[] 
-	{
-		List<ICard> liste = new LinkedList<ICard>();
-		for (ICard card : this.pack) {
-			liste.add(card);
-		}
-		return liste;
-	}
+	public op getPack():ICard[] { }
 	
-	public op getcolors():String[] 
-	{
-		return Pack.COLORS
-	}
+	public op getcolors():String[] { }
 	
-	public op getFormes():String[]
-	{
-		return Pack.FORME
-	}
+	public op getFormes():String[]{ }
 	
-	public op getFill():String[]
-	{
-		return Pack.FILL
-	}
+	public op getFill():String[]{ }
 	
-}
 }

@@ -24,7 +24,7 @@
     <genClasses ecoreClass="Set.ecore#//Entity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Set.ecore#//Entity/visibility"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Set.ecore#//Entity/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Set.ecore#//Entity/superType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Set.ecore#//Entity/superType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Set.ecore#//Entity/features"/>
     </genClasses>
     <genClasses ecoreClass="Set.ecore#//Feature">

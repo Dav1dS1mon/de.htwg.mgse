@@ -190,7 +190,7 @@ public interface SetPackage extends EPackage
   int ENTITY__NAME = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Super Type</b></em>' reference.
+   * The feature id for the '<em><b>Super Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -471,15 +471,15 @@ public interface SetPackage extends EPackage
   EAttribute getEntity_Name();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.de.htwg.set.Entity#getSuperType <em>Super Type</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.de.htwg.set.Entity#getSuperType <em>Super Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Super Type</em>'.
+   * @return the meta object for the attribute '<em>Super Type</em>'.
    * @see org.xtext.de.htwg.set.Entity#getSuperType()
    * @see #getEntity()
    * @generated
    */
-  EReference getEntity_SuperType();
+  EAttribute getEntity_SuperType();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.de.htwg.set.Entity#getFeatures <em>Features</em>}'.
@@ -701,12 +701,12 @@ public interface SetPackage extends EPackage
     EAttribute ENTITY__NAME = eINSTANCE.getEntity_Name();
 
     /**
-     * The meta object literal for the '<em><b>Super Type</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Super Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ENTITY__SUPER_TYPE = eINSTANCE.getEntity_SuperType();
+    EAttribute ENTITY__SUPER_TYPE = eINSTANCE.getEntity_SuperType();
 
     /**
      * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.

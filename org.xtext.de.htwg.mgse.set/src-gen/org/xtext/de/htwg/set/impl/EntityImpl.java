@@ -82,14 +82,24 @@ public class EntityImpl extends AbstractElementImpl implements Entity
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getSuperType() <em>Super Type</em>}' reference.
+   * The default value of the '{@link #getSuperType() <em>Super Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSuperType()
    * @generated
    * @ordered
    */
-  protected Entity superType;
+  protected static final String SUPER_TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSuperType() <em>Super Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSuperType()
+   * @generated
+   * @ordered
+   */
+  protected String superType = SUPER_TYPE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
@@ -173,27 +183,7 @@ public class EntityImpl extends AbstractElementImpl implements Entity
    * <!-- end-user-doc -->
    * @generated
    */
-  public Entity getSuperType()
-  {
-    if (superType != null && superType.eIsProxy())
-    {
-      InternalEObject oldSuperType = (InternalEObject)superType;
-      superType = (Entity)eResolveProxy(oldSuperType);
-      if (superType != oldSuperType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SetPackage.ENTITY__SUPER_TYPE, oldSuperType, superType));
-      }
-    }
-    return superType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Entity basicGetSuperType()
+  public String getSuperType()
   {
     return superType;
   }
@@ -203,9 +193,9 @@ public class EntityImpl extends AbstractElementImpl implements Entity
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSuperType(Entity newSuperType)
+  public void setSuperType(String newSuperType)
   {
-    Entity oldSuperType = superType;
+    String oldSuperType = superType;
     superType = newSuperType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SetPackage.ENTITY__SUPER_TYPE, oldSuperType, superType));
@@ -256,8 +246,7 @@ public class EntityImpl extends AbstractElementImpl implements Entity
       case SetPackage.ENTITY__NAME:
         return getName();
       case SetPackage.ENTITY__SUPER_TYPE:
-        if (resolve) return getSuperType();
-        return basicGetSuperType();
+        return getSuperType();
       case SetPackage.ENTITY__FEATURES:
         return getFeatures();
     }
@@ -282,7 +271,7 @@ public class EntityImpl extends AbstractElementImpl implements Entity
         setName((String)newValue);
         return;
       case SetPackage.ENTITY__SUPER_TYPE:
-        setSuperType((Entity)newValue);
+        setSuperType((String)newValue);
         return;
       case SetPackage.ENTITY__FEATURES:
         getFeatures().clear();
@@ -309,7 +298,7 @@ public class EntityImpl extends AbstractElementImpl implements Entity
         setName(NAME_EDEFAULT);
         return;
       case SetPackage.ENTITY__SUPER_TYPE:
-        setSuperType((Entity)null);
+        setSuperType(SUPER_TYPE_EDEFAULT);
         return;
       case SetPackage.ENTITY__FEATURES:
         getFeatures().clear();
@@ -333,7 +322,7 @@ public class EntityImpl extends AbstractElementImpl implements Entity
       case SetPackage.ENTITY__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SetPackage.ENTITY__SUPER_TYPE:
-        return superType != null;
+        return SUPER_TYPE_EDEFAULT == null ? superType != null : !SUPER_TYPE_EDEFAULT.equals(superType);
       case SetPackage.ENTITY__FEATURES:
         return features != null && !features.isEmpty();
     }
@@ -355,6 +344,8 @@ public class EntityImpl extends AbstractElementImpl implements Entity
     result.append(visibility);
     result.append(", name: ");
     result.append(name);
+    result.append(", superType: ");
+    result.append(superType);
     result.append(')');
     return result.toString();
   }
