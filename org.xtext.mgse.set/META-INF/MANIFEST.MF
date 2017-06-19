@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.mgse.set
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.mgse.set; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.mgse.parser.antlr.internal,
+ org.xtext.mgse.validation,
+ org.xtext.mgse.set.impl,
+ org.xtext.mgse.scoping,
+ org.xtext.mgse.services,
+ org.xtext.mgse.set,
+ org.xtext.mgse.parser.antlr,
+ org.xtext.mgse.set.util,
+ org.xtext.mgse.generator,
+ org.xtext.mgse,
+ org.xtext.mgse.serializer
+Import-Package: org.apache.log4j

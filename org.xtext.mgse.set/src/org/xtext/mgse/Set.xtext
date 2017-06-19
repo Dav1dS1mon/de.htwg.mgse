@@ -1,0 +1,51 @@
+grammar org.xtext.mgse.Set with org.eclipse.xtext.common.Terminals
+generate set "http://www.xtext.org/mgse/Set"
+
+PACK:
+	'pack' name=ID '{'type=PACKTYPE
+	'}'
+;
+
+PACKTYPE:
+	(forms=FORMS url=URL) 
+;
+
+FORMS:
+	name='FORM' '=' type=TYPE_FORMS
+;
+
+enum TYPE_FORMS:
+	FORM_ORIGINAL | FORM_DOCTORWHO | FORM_GAMEOFTHRONES
+;
+
+FORM_GAMEOFTHRONES:
+	"{\"stark\",\"lennister\",\"targaryen\"};"
+;
+
+FORM_ORIGINAL:
+	"{\"ovally\",\"wave\",\"balk\"};"
+;
+
+FORM_DOCTORWHO:
+	"{\"tardis\",\"dalek\",\"cyberman\"};"
+;
+
+URL:
+	name='URL' '=' type=URL_TYPES
+;
+
+enum URL_TYPES:
+	URL_ORIGINAL | URL_DOCTORWHO | URL_GAMEOFTHRONES
+;
+
+URL_GAMEOFTHRONES:
+	"/pack/got/"
+;
+
+URL_DOCTORWHO:
+	"/pack/dw/"
+;
+
+URL_ORIGINAL:
+	"/pack/original/"
+;
