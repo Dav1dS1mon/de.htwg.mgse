@@ -24,76 +24,22 @@ public interface SetFactory extends EFactory
   SetFactory eINSTANCE = org.xtext.de.htwg.set.impl.SetFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Domainmodel</em>'.
+   * Returns a new object of class '<em>PACK</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Domainmodel</em>'.
+   * @return a new object of class '<em>PACK</em>'.
    * @generated
    */
-  Domainmodel createDomainmodel();
+  PACK createPACK();
 
   /**
-   * Returns a new object of class '<em>Abstract Element</em>'.
+   * Returns a new object of class '<em>PACKTYPE</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Abstract Element</em>'.
+   * @return a new object of class '<em>PACKTYPE</em>'.
    * @generated
    */
-  AbstractElement createAbstractElement();
-
-  /**
-   * Returns a new object of class '<em>Package Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Package Declaration</em>'.
-   * @generated
-   */
-  PackageDeclaration createPackageDeclaration();
-
-  /**
-   * Returns a new object of class '<em>Import</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Import</em>'.
-   * @generated
-   */
-  Import createImport();
-
-  /**
-   * Returns a new object of class '<em>Entity</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Entity</em>'.
-   * @generated
-   */
-  Entity createEntity();
-
-  /**
-   * Returns a new object of class '<em>Feature</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Feature</em>'.
-   * @generated
-   */
-  Feature createFeature();
-
-  /**
-   * Returns a new object of class '<em>Property</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Property</em>'.
-   * @generated
-   */
-  Property createProperty();
-
-  /**
-   * Returns a new object of class '<em>Operation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Operation</em>'.
-   * @generated
-   */
-  Operation createOperation();
+  PACKTYPE createPACKTYPE();
 
   /**
    * Returns the package supported by this factory.

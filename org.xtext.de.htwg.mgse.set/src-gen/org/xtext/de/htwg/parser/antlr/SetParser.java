@@ -27,7 +27,7 @@ public class SetParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Domainmodel";
+		return "PACK";
 	}
 
 	public SetGrammarAccess getGrammarAccess() {

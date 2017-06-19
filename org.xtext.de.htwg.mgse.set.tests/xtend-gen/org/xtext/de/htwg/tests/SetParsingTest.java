@@ -4,15 +4,11 @@
 package org.xtext.de.htwg.tests;
 
 import com.google.inject.Inject;
-import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.XtextRunner;
 import org.eclipse.xtext.testing.util.ParseHelper;
-import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.xtext.de.htwg.set.Domainmodel;
 import org.xtext.de.htwg.tests.SetInjectorProvider;
 
 @RunWith(XtextRunner.class)
@@ -20,19 +16,14 @@ import org.xtext.de.htwg.tests.SetInjectorProvider;
 @SuppressWarnings("all")
 public class SetParsingTest {
   @Inject
-  private ParseHelper<Domainmodel> parseHelper;
+  private /* ParseHelper<Domainmodel> */Object parseHelper;
   
   @Test
   public void loadModel() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("Hello Xtext!");
-      _builder.newLine();
-      final Domainmodel result = this.parseHelper.parse(_builder);
-      Assert.assertNotNull(result);
-      Assert.assertTrue(result.eResource().getErrors().isEmpty());
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe field SetParsingTest.parseHelper refers to the missing type Domainmodel"
+      + "\neResource cannot be resolved"
+      + "\nerrors cannot be resolved"
+      + "\nisEmpty cannot be resolved");
   }
 }

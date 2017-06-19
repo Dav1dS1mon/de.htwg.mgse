@@ -3,7 +3,7 @@
  */
 package org.xtext.de.htwg.scoping;
 
-import org.eclipse.xtext.xbase.scoping.batch.XbaseBatchScopeProvider;
+import org.eclipse.xtext.scoping.impl.DelegatingScopeProvider;
 
-public abstract class AbstractSetScopeProvider extends XbaseBatchScopeProvider {
+public abstract class AbstractSetScopeProvider extends DelegatingScopeProvider {
 }

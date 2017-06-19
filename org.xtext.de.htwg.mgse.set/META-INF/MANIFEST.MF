@@ -27,5 +27,6 @@ Export-Package: org.xtext.de.htwg.validation,
  org.xtext.de.htwg.parser.antlr.internal,
  org.xtext.de.htwg,
  org.xtext.de.htwg.services,
- org.xtext.de.htwg.serializer
+ org.xtext.de.htwg.serializer,
+ org.xtext.de.htwg.generator
 Import-Package: org.apache.log4j

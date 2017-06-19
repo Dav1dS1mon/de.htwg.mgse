@@ -76,44 +76,14 @@ public class SetAdapterFactory extends AdapterFactoryImpl
     new SetSwitch<Adapter>()
     {
       @Override
-      public Adapter caseDomainmodel(Domainmodel object)
+      public Adapter casePACK(PACK object)
       {
-        return createDomainmodelAdapter();
+        return createPACKAdapter();
       }
       @Override
-      public Adapter caseAbstractElement(AbstractElement object)
+      public Adapter casePACKTYPE(PACKTYPE object)
       {
-        return createAbstractElementAdapter();
-      }
-      @Override
-      public Adapter casePackageDeclaration(PackageDeclaration object)
-      {
-        return createPackageDeclarationAdapter();
-      }
-      @Override
-      public Adapter caseImport(Import object)
-      {
-        return createImportAdapter();
-      }
-      @Override
-      public Adapter caseEntity(Entity object)
-      {
-        return createEntityAdapter();
-      }
-      @Override
-      public Adapter caseFeature(Feature object)
-      {
-        return createFeatureAdapter();
-      }
-      @Override
-      public Adapter caseProperty(Property object)
-      {
-        return createPropertyAdapter();
-      }
-      @Override
-      public Adapter caseOperation(Operation object)
-      {
-        return createOperationAdapter();
+        return createPACKTYPEAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -138,121 +108,31 @@ public class SetAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.de.htwg.set.Domainmodel <em>Domainmodel</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.de.htwg.set.PACK <em>PACK</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.de.htwg.set.Domainmodel
+   * @see org.xtext.de.htwg.set.PACK
    * @generated
    */
-  public Adapter createDomainmodelAdapter()
+  public Adapter createPACKAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.de.htwg.set.AbstractElement <em>Abstract Element</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.de.htwg.set.PACKTYPE <em>PACKTYPE</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.de.htwg.set.AbstractElement
+   * @see org.xtext.de.htwg.set.PACKTYPE
    * @generated
    */
-  public Adapter createAbstractElementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.de.htwg.set.PackageDeclaration <em>Package Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.de.htwg.set.PackageDeclaration
-   * @generated
-   */
-  public Adapter createPackageDeclarationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.de.htwg.set.Import <em>Import</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.de.htwg.set.Import
-   * @generated
-   */
-  public Adapter createImportAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.de.htwg.set.Entity <em>Entity</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.de.htwg.set.Entity
-   * @generated
-   */
-  public Adapter createEntityAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.de.htwg.set.Feature <em>Feature</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.de.htwg.set.Feature
-   * @generated
-   */
-  public Adapter createFeatureAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.de.htwg.set.Property <em>Property</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.de.htwg.set.Property
-   * @generated
-   */
-  public Adapter createPropertyAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.de.htwg.set.Operation <em>Operation</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.de.htwg.set.Operation
-   * @generated
-   */
-  public Adapter createOperationAdapter()
+  public Adapter createPACKTYPEAdapter()
   {
     return null;
   }

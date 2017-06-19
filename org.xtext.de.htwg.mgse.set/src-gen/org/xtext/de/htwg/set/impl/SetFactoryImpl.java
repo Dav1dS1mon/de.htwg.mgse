@@ -4,7 +4,6 @@
 package org.xtext.de.htwg.set.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -66,14 +65,8 @@ public class SetFactoryImpl extends EFactoryImpl implements SetFactory
   {
     switch (eClass.getClassifierID())
     {
-      case SetPackage.DOMAINMODEL: return createDomainmodel();
-      case SetPackage.ABSTRACT_ELEMENT: return createAbstractElement();
-      case SetPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
-      case SetPackage.IMPORT: return createImport();
-      case SetPackage.ENTITY: return createEntity();
-      case SetPackage.FEATURE: return createFeature();
-      case SetPackage.PROPERTY: return createProperty();
-      case SetPackage.OPERATION: return createOperation();
+      case SetPackage.PACK: return createPACK();
+      case SetPackage.PACKTYPE: return createPACKTYPE();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -84,16 +77,10 @@ public class SetFactoryImpl extends EFactoryImpl implements SetFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public Object createFromString(EDataType eDataType, String initialValue)
+  public PACK createPACK()
   {
-    switch (eDataType.getClassifierID())
-    {
-      case SetPackage.VISIBILITY:
-        return createVisibilityFromString(eDataType, initialValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
+    PACKImpl pack = new PACKImpl();
+    return pack;
   }
 
   /**
@@ -101,126 +88,10 @@ public class SetFactoryImpl extends EFactoryImpl implements SetFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public String convertToString(EDataType eDataType, Object instanceValue)
+  public PACKTYPE createPACKTYPE()
   {
-    switch (eDataType.getClassifierID())
-    {
-      case SetPackage.VISIBILITY:
-        return convertVisibilityToString(eDataType, instanceValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Domainmodel createDomainmodel()
-  {
-    DomainmodelImpl domainmodel = new DomainmodelImpl();
-    return domainmodel;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AbstractElement createAbstractElement()
-  {
-    AbstractElementImpl abstractElement = new AbstractElementImpl();
-    return abstractElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PackageDeclaration createPackageDeclaration()
-  {
-    PackageDeclarationImpl packageDeclaration = new PackageDeclarationImpl();
-    return packageDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Import createImport()
-  {
-    ImportImpl import_ = new ImportImpl();
-    return import_;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Entity createEntity()
-  {
-    EntityImpl entity = new EntityImpl();
-    return entity;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Feature createFeature()
-  {
-    FeatureImpl feature = new FeatureImpl();
-    return feature;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Property createProperty()
-  {
-    PropertyImpl property = new PropertyImpl();
-    return property;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Operation createOperation()
-  {
-    OperationImpl operation = new OperationImpl();
-    return operation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Visibility createVisibilityFromString(EDataType eDataType, String initialValue)
-  {
-    Visibility result = Visibility.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertVisibilityToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
+    PACKTYPEImpl packtype = new PACKTYPEImpl();
+    return packtype;
   }
 
   /**

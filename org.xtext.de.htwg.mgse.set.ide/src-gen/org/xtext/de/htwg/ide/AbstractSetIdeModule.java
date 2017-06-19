@@ -5,6 +5,7 @@ package org.xtext.de.htwg.ide;
 
 import com.google.inject.Binder;
 import com.google.inject.name.Names;
+import org.eclipse.xtext.ide.DefaultIdeModule;
 import org.eclipse.xtext.ide.LexerIdeBindings;
 import org.eclipse.xtext.ide.editor.contentassist.FQNPrefixMatcher;
 import org.eclipse.xtext.ide.editor.contentassist.IPrefixMatcher;
@@ -12,7 +13,6 @@ import org.eclipse.xtext.ide.editor.contentassist.IProposalConflictHelper;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.AntlrProposalConflictHelper;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.IContentAssistParser;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
-import org.eclipse.xtext.xbase.ide.DefaultXbaseIdeModule;
 import org.xtext.de.htwg.ide.contentassist.antlr.SetParser;
 import org.xtext.de.htwg.ide.contentassist.antlr.internal.InternalSetLexer;
 
@@ -20,7 +20,7 @@ import org.xtext.de.htwg.ide.contentassist.antlr.internal.InternalSetLexer;
  * Manual modifications go to {@link SetIdeModule}.
  */
 @SuppressWarnings("all")
-public abstract class AbstractSetIdeModule extends DefaultXbaseIdeModule {
+public abstract class AbstractSetIdeModule extends DefaultIdeModule {
 
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
 	public void configureContentAssistLexer(Binder binder) {
