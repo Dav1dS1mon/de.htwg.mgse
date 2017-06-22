@@ -18,6 +18,15 @@ enum TYPE_FORMS:
 	FORM_ORIGINAL | FORM_DOCTORWHO | FORM_GAMEOFTHRONES
 ;
 
+URL:
+	name='URL' '=' type=URL_TYPES
+;
+
+enum URL_TYPES:
+	URL_ORIGINAL | URL_DOCTORWHO | URL_GAMEOFTHRONES
+;
+
+/* 
 FORM_GAMEOFTHRONES:
 	"{\"stark\",\"lennister\",\"targaryen\"};"
 ;
@@ -28,14 +37,6 @@ FORM_ORIGINAL:
 
 FORM_DOCTORWHO:
 	"{\"tardis\",\"dalek\",\"cyberman\"};"
-;
-
-URL:
-	name='URL' '=' type=URL_TYPES
-;
-
-enum URL_TYPES:
-	URL_ORIGINAL | URL_DOCTORWHO | URL_GAMEOFTHRONES
 ;
 
 URL_GAMEOFTHRONES:
@@ -49,3 +50,4 @@ URL_DOCTORWHO:
 URL_ORIGINAL:
 	"/pack/original/"
 ;
+*/

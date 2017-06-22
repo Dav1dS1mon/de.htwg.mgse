@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.xtext.mgse.set.PACK
 
 /**
  * Generates code from your model files on save.
@@ -14,12 +15,190 @@ import org.eclipse.xtext.generator.IGeneratorContext
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class SetGenerator extends AbstractGenerator {
-
+	
+    private String dw = "{\"tardis\",\"dalek\",\"cyberman\"}";
+    private String got = "{\"stark\",\"lennister\",\"targaryen\"}";
+    private String original = "{\"ovally\",\"wave\",\"balk\"}";
+    private String path_dw = "\"/pack/dw/\"";
+    private String path_got = "\"/pack/got/\"";
+    private String path_original = "\"/pack/original/\"";
+    
+    private String url_gen;
+    private String form_gen;
+	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		
+		val pack = resource.contents.head as PACK;
+		val packtype = pack.type;
+		val form = packtype.forms;
+		val url = packtype.url;
+
+        if (url.type.toString().equals("URL_ORIGINAL")) {
+        	this.url_gen = this.path_original;
+        } else if (url.type.toString().equals("URL_GAMEOFTHRONES")) {
+        	this.url_gen = this.path_got;
+        } else if (url.type.toString().equals("URL_DOCTORWHO")) {
+        	this.url_gen = this.path_dw;
+        }
+        
+        if (form.type.toString().equals("FORM_ORIGINAL")) {
+        	this.form_gen = this.original;
+        } else if (form.type.toString().equals("FORM_GAMEOFTHRONES")) {
+        	this.form_gen = this.got;
+        } else if (form.type.toString().equals("FORM_DOCTORWHO")) {
+        	this.form_gen = this.dw;
+        } 
+
+        fsa.generateFile('Model/de.htwg.se.SetGame/src/de/htwg/se/setgame/modell/impl/Pack.java',
+        	
+        	'''
+        	package de.htwg.se.setgame.modell.impl;
+        	
+        	import java.util.LinkedList;
+        	import java.util.List;
+        	
+        	import de.htwg.se.setgame.modell.ICard;
+        	
+        	/**
+        	 * @author David & Sascha class use to create all the
+        	 *         combinations of the pack
+        	 */
+        	public class Pack{
+        	
+        		/**
+        		 * Instance variable
+        		 */
+        		private ICard pack[] = creatCards();
+        		private static String pack_url = «this.url_gen»;
+        		protected static String[] FORME = «this.form_gen»;
+        		protected static final String[] COLORS = { "red", "green", "purple" };
+        		protected static final String[] FILL = { "halffill", "fill", "empty" };
+        		protected static final int[] NUMBEROFCOMPONET = { 1, 2, 3 };
+        		private static final int SIZEOFARRAY = 81;
+        		private static final int NUMBEROFEACHCARD = 3;
+        		private int colorIndex = 0;
+        		private int formeIndex = 0;
+        		private int fillgingIndex = 0;
+        		private int numbersIdex = 0;
+        	
+        		/**
+        		 * Construct for card
+        		 */
+        	
+        		public Pack() {
+        	
+        		}
+        	
+        		/**
+        		 * @return the finish pack of the Game
+        		 */
+        		protected Card[] creatCards() {
+        			Card list[] = new Card[SIZEOFARRAY];
+        			for (int i = 0; i < SIZEOFARRAY; i++) {
+        	
+        				list[i] = new Card(COLORS[colorIndex], FORME[formeIndex],
+        						FILL[fillgingIndex], NUMBEROFCOMPONET[numbersIdex]);
+        				setFormedIndex();
+        	
+        			}
+        	
+        			return list;
+        	
+        		}
+        		
+        		public String getPackURL() {
+        			return pack_url;
+        		}
+        		
+        		public static void setForm(String[] forms) {
+        			FORME = forms;
+        		}
+        		
+        		public static void setPackURL(String url) {
+        			pack_url = url;
+        		}
+        	
+        		/**
+        		 * set number of index form
+        		 */
+        		private void setFormedIndex() {
+        			int t = this.formeIndex + 1;
+        			if (t == NUMBEROFEACHCARD) {
+        				setFillIndex();
+        				this.formeIndex = 0;
+        			} else {
+        				this.formeIndex = t;
+        			}
+        	
+        		}
+        	
+        		/**
+        		 * set index of the fill
+        		 */
+        		private void setFillIndex() {
+        			int t = this.fillgingIndex + 1;
+        			if (t == NUMBEROFEACHCARD) {
+        				this.fillgingIndex = 0;
+        				setComponentsOfIndex();
+        			} else {
+        				this.fillgingIndex = t;
+        			}
+        	
+        		}
+        	
+        		/**
+        		 * set index of number of Components
+        		 */
+        		private void setComponentsOfIndex() {
+        			int t = this.numbersIdex + 1;
+        			if (t == NUMBEROFEACHCARD) {
+        				this.numbersIdex = 0;
+        				setColorIndex();
+        			} else {
+        				this.numbersIdex = t;
+        			}
+        		}
+        	
+        		/**
+        		 * Set Color Index
+        		 */
+        		private void setColorIndex() {
+        			int t = this.colorIndex + 1;
+        			if (t == NUMBEROFEACHCARD) {
+        				this.colorIndex = 0;
+        			}
+        			this.colorIndex = t;
+        	
+        		}
+        	
+        		/**
+        		 * @return pack of cards
+        		 */
+        		public List<ICard> getPack() {
+        			List<ICard> liste = new LinkedList<ICard>();
+        			for (ICard card : this.pack) {
+        				liste.add(card);
+        			}
+        			return liste;
+        		}
+        	
+        		public String[] getcolors() {
+        			return Pack.COLORS;
+        	
+        		}
+        	
+        		public String[] getFormes() {
+        			return Pack.FORME;
+        		}
+        	
+        		public String[] getFill() {
+        			return Pack.FILL;
+        		}
+        	
+        	}
+        	
+        	'''
+        	
+        )
 	}
 }

@@ -123,39 +123,6 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 		//TYPE_FORMS
 		public RuleCall getTypeTYPE_FORMSEnumRuleCall_2_0() { return cTypeTYPE_FORMSEnumRuleCall_2_0; }
 	}
-	public class FORM_GAMEOFTHRONESElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mgse.Set.FORM_GAMEOFTHRONES");
-		private final Keyword cStarkLennisterTargaryenKeyword = (Keyword)rule.eContents().get(1);
-		
-		//FORM_GAMEOFTHRONES:
-		//	"{\"stark\",\"lennister\",\"targaryen\"};";
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"{\"stark\",\"lennister\",\"targaryen\"};"
-		public Keyword getStarkLennisterTargaryenKeyword() { return cStarkLennisterTargaryenKeyword; }
-	}
-	public class FORM_ORIGINALElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mgse.Set.FORM_ORIGINAL");
-		private final Keyword cOvallyWaveBalkKeyword = (Keyword)rule.eContents().get(1);
-		
-		//FORM_ORIGINAL:
-		//	"{\"ovally\",\"wave\",\"balk\"};";
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"{\"ovally\",\"wave\",\"balk\"};"
-		public Keyword getOvallyWaveBalkKeyword() { return cOvallyWaveBalkKeyword; }
-	}
-	public class FORM_DOCTORWHOElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mgse.Set.FORM_DOCTORWHO");
-		private final Keyword cTardisDalekCybermanKeyword = (Keyword)rule.eContents().get(1);
-		
-		//FORM_DOCTORWHO:
-		//	"{\"tardis\",\"dalek\",\"cyberman\"};";
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"{\"tardis\",\"dalek\",\"cyberman\"};"
-		public Keyword getTardisDalekCybermanKeyword() { return cTardisDalekCybermanKeyword; }
-	}
 	public class URLElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mgse.Set.URL");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -186,39 +153,6 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//URL_TYPES
 		public RuleCall getTypeURL_TYPESEnumRuleCall_2_0() { return cTypeURL_TYPESEnumRuleCall_2_0; }
-	}
-	public class URL_GAMEOFTHRONESElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mgse.Set.URL_GAMEOFTHRONES");
-		private final Keyword cPackGotKeyword = (Keyword)rule.eContents().get(1);
-		
-		//URL_GAMEOFTHRONES:
-		//	"/pack/got/";
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"/pack/got/"
-		public Keyword getPackGotKeyword() { return cPackGotKeyword; }
-	}
-	public class URL_DOCTORWHOElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mgse.Set.URL_DOCTORWHO");
-		private final Keyword cPackDwKeyword = (Keyword)rule.eContents().get(1);
-		
-		//URL_DOCTORWHO:
-		//	"/pack/dw/";
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"/pack/dw/"
-		public Keyword getPackDwKeyword() { return cPackDwKeyword; }
-	}
-	public class URL_ORIGINALElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mgse.Set.URL_ORIGINAL");
-		private final Keyword cPackOriginalKeyword = (Keyword)rule.eContents().get(1);
-		
-		//URL_ORIGINAL:
-		//	"/pack/original/";
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"/pack/original/"
-		public Keyword getPackOriginalKeyword() { return cPackOriginalKeyword; }
 	}
 	
 	public class TYPE_FORMSElements extends AbstractEnumRuleElementFinder {
@@ -296,14 +230,8 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 	private final PACKTYPEElements pPACKTYPE;
 	private final FORMSElements pFORMS;
 	private final TYPE_FORMSElements eTYPE_FORMS;
-	private final FORM_GAMEOFTHRONESElements pFORM_GAMEOFTHRONES;
-	private final FORM_ORIGINALElements pFORM_ORIGINAL;
-	private final FORM_DOCTORWHOElements pFORM_DOCTORWHO;
 	private final URLElements pURL;
 	private final URL_TYPESElements eURL_TYPES;
-	private final URL_GAMEOFTHRONESElements pURL_GAMEOFTHRONES;
-	private final URL_DOCTORWHOElements pURL_DOCTORWHO;
-	private final URL_ORIGINALElements pURL_ORIGINAL;
 	
 	private final Grammar grammar;
 	
@@ -318,14 +246,8 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 		this.pPACKTYPE = new PACKTYPEElements();
 		this.pFORMS = new FORMSElements();
 		this.eTYPE_FORMS = new TYPE_FORMSElements();
-		this.pFORM_GAMEOFTHRONES = new FORM_GAMEOFTHRONESElements();
-		this.pFORM_ORIGINAL = new FORM_ORIGINALElements();
-		this.pFORM_DOCTORWHO = new FORM_DOCTORWHOElements();
 		this.pURL = new URLElements();
 		this.eURL_TYPES = new URL_TYPESElements();
-		this.pURL_GAMEOFTHRONES = new URL_GAMEOFTHRONESElements();
-		this.pURL_DOCTORWHO = new URL_DOCTORWHOElements();
-		this.pURL_ORIGINAL = new URL_ORIGINALElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -396,36 +318,6 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 		return getTYPE_FORMSAccess().getRule();
 	}
 	
-	//FORM_GAMEOFTHRONES:
-	//	"{\"stark\",\"lennister\",\"targaryen\"};";
-	public FORM_GAMEOFTHRONESElements getFORM_GAMEOFTHRONESAccess() {
-		return pFORM_GAMEOFTHRONES;
-	}
-	
-	public ParserRule getFORM_GAMEOFTHRONESRule() {
-		return getFORM_GAMEOFTHRONESAccess().getRule();
-	}
-	
-	//FORM_ORIGINAL:
-	//	"{\"ovally\",\"wave\",\"balk\"};";
-	public FORM_ORIGINALElements getFORM_ORIGINALAccess() {
-		return pFORM_ORIGINAL;
-	}
-	
-	public ParserRule getFORM_ORIGINALRule() {
-		return getFORM_ORIGINALAccess().getRule();
-	}
-	
-	//FORM_DOCTORWHO:
-	//	"{\"tardis\",\"dalek\",\"cyberman\"};";
-	public FORM_DOCTORWHOElements getFORM_DOCTORWHOAccess() {
-		return pFORM_DOCTORWHO;
-	}
-	
-	public ParserRule getFORM_DOCTORWHORule() {
-		return getFORM_DOCTORWHOAccess().getRule();
-	}
-	
 	//URL:
 	//	name='URL' '=' type=URL_TYPES;
 	public URLElements getURLAccess() {
@@ -444,36 +336,6 @@ public class SetGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public EnumRule getURL_TYPESRule() {
 		return getURL_TYPESAccess().getRule();
-	}
-	
-	//URL_GAMEOFTHRONES:
-	//	"/pack/got/";
-	public URL_GAMEOFTHRONESElements getURL_GAMEOFTHRONESAccess() {
-		return pURL_GAMEOFTHRONES;
-	}
-	
-	public ParserRule getURL_GAMEOFTHRONESRule() {
-		return getURL_GAMEOFTHRONESAccess().getRule();
-	}
-	
-	//URL_DOCTORWHO:
-	//	"/pack/dw/";
-	public URL_DOCTORWHOElements getURL_DOCTORWHOAccess() {
-		return pURL_DOCTORWHO;
-	}
-	
-	public ParserRule getURL_DOCTORWHORule() {
-		return getURL_DOCTORWHOAccess().getRule();
-	}
-	
-	//URL_ORIGINAL:
-	//	"/pack/original/";
-	public URL_ORIGINALElements getURL_ORIGINALAccess() {
-		return pURL_ORIGINAL;
-	}
-	
-	public ParserRule getURL_ORIGINALRule() {
-		return getURL_ORIGINALAccess().getRule();
 	}
 	
 	//terminal ID:

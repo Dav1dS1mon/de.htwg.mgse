@@ -3,23 +3,27 @@
  */
 package org.xtext.mgse.validation
 
+import org.eclipse.xtext.validation.Check
+import org.xtext.mgse.set.PACK
+import org.xtext.mgse.set.SetPackage
 
 /**
  * This class contains custom validation rules. 
  *
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
+ 
 class SetValidator extends AbstractSetValidator {
 	
-//	public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					SetPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+	public static val INVALID_NAME = 'invalidName'
+
+	@Check
+	def checkGreetingStartsWithCapital(PACK greeting) {		
+		    if (!Character.isUpperCase(greeting.name.charAt(0))) {
+			    warning('Name should start with a capital', 
+					SetPackage.Literals.PACK__NAME,
+					INVALID_NAME)
+		}
+	}
 	
 }
