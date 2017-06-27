@@ -11,7 +11,7 @@
 
 > Team: David Simon & Sascha Dobrig
 
-> Old Github-Account: ![Team4Game](https://github.com/Team4Game/de.htwg.se.setGame) with Raina Bertolini
+> Old Github-Account: ![Team4Game](https://github.com/Team4Game/de.htwg.se.setGame) with Ina Kuhn
 
 ## Generate Java class - Pack.java - How to use:
 
